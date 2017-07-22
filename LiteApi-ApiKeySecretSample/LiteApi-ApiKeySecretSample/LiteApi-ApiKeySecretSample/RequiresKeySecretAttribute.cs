@@ -5,7 +5,7 @@ using System;
 namespace LiteApiApiKeySecretSample.Services
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class RequiresKeySecret : Attribute, IApiFilter
+    public class RequiresKeySecretAttribute : Attribute, IApiFilter
     {
         public bool IgnoreSkipFilters { get; } = false;
 
