@@ -18,7 +18,8 @@ namespace LiteApiApiKeySecretSample.Services
                 return ApiFilterRunResult.Unauthenticated;
             }
 
-            IApiKeySecretStore store = httpCtx.RequestServices.GetService(typeof(IApiKeySecretStore)) as IApiKeySecretStore;
+            IApiKeySecretStore store = httpCtx.RequestServices
+                .GetService(typeof(IApiKeySecretStore)) as IApiKeySecretStore;
             if (!store.ValidateKeySecret(apiKey, apiSecret))
             {
                 return ApiFilterRunResult.Unauthenticated;
